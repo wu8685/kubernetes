@@ -20,7 +20,7 @@ limitations under the License.
 package config
 
 import (
-	"errors"
+	"fmt"
 
 	"github.com/golang/glog"
 )
@@ -30,5 +30,5 @@ func (s *sourceFile) startWatch() {
 }
 
 func (s *sourceFile) consumeWatchEvent(e *watchEvent) error {
-	glog.Errorf("Consuming watch event is unsupported in this build")
+	return fmt.Errorf("consuming watch event is unsupported in this build")
 }
